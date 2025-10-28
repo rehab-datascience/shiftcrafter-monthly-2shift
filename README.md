@@ -90,17 +90,15 @@ date,dow,need_day,need_night,day_staff_1,day_staff_2,night_staff_1
 
 ## Issue / 相談
 - 🐛 **バグ報告**・✨ **機能要望**・🤝 **カスタム相談** を受け付けています：  
-https://github.com/<OWNER>/<REPO>/issues/new/choose
 
 ---
 
 ## ライセンス
-- 例：**MIT License**
+- **MIT License**
 
 ---
 
 ## 付録：入力サンプル
-
 ### `staff_sample.txt`
 田中
 鈴木
