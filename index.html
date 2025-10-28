@@ -520,26 +520,32 @@ function buildValidationCSV(schedule, staff, requests, weeklyNightCap, monthlyNi
   return new Blob([bom, csv], { type:'text/csv;charset=utf-8;' });
 }
 
-elBtnValidate.addEventListener('click', ()=>{
-  if (!lastSchedule) return;
+elBtnGen.addEventListener('click', ()=>{
+  const monthStart = parseMonthStr(elMonth.value);
   const staff = getStaff();
-  const req = getRequests();
-  const blob = buildValidationCSV(
-    lastSchedule, staff, req,
-    document.getElementById('weeklyNightCap').value,
-    document.getElementById('monthlyNightCap').value
-  );
-  download('validation_summary.csv', blob);
+  const requests = getRequests();
+  const needDay = Number(elNeedDay.value||0);
+  const needNight = Number(elNeedNight.value||0);
+  const weeklyNightCap = Number(elWCap.value||0);
+  const monthlyNightCap = elMCap.value === '' ? '' : Number(elMCap.value||0);
+
+  if(!monthStart){ elMsg.innerHTML = '<span class="error">対象月を入力してください</span>'; return; }
+  if(staff.length===0){ elMsg.innerHTML = '<span class="error">職員リストが空です</span>'; return; }
+  if(needDay+needNight===0){ elMsg.innerHTML = '<span class="warn">必要人数が0です。結果は空割当になります</span>'; }
+
+  const { schedule } = assignMonthly({ monthStart, needDay, needNight, weeklyNightCap, monthlyNightCap, staff, requests });
+  lastSchedule = schedule;
+
+  renderTable(schedule);
+  renderSummary(schedule, staff);
+
+  // ✅ ここで有効化（クリックハンドラ内）
+  elBtnCsv.disabled = false;
+  elBtnIcsAll.disabled = false;
+  elBtnValidate.disabled = false;
+
+  elMsg.innerHTML = '<span class="ok">作成完了。CSV/ICSのダウンロードが可能です</span>';
 });
-
-// 生成成功後
-renderTable(schedule);
-renderSummary(schedule, staff);
-
-// ← コメントを外して“実行されるコード”にする
-elBtnCsv.disabled = false;
-elBtnIcsAll.disabled = false;
-elBtnValidate.disabled = false;
 
 </script>
 </body>
