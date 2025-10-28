@@ -3,9 +3,9 @@
 **目的**：二交代（**日勤/夜勤**）の**1か月**シフトを、**ブラウザだけ**で自動割当し、**CSV**と**ICS**で配布します。  
 データは**外部送信しません**。教育・業務補助目的のクライアントサイドWebアプリです。
 
-- デモ（GitHub Pages）：https://<OWNER>.github.io/<REPO>/    ←差し替え
-- ソースコード： https://github.com/<OWNER>/<REPO>         ←差し替え
-- 不具合・要望： https://github.com/<OWNER>/<REPO>/issues/new/choose
+- 連載：Part 3（三交代）→Part 4（早出・遅出）→Part 5（時短勤務）→Part 6（看護助手など混合）…と拡張予定
+- デモ（GitHub Pages）：https://rehab-datascience.github.io/shiftcrafter-monthly-2shift/index.html
+- リポジトリ：https://github.com/rehab-datascience/shiftcrafter-weekly-2shift
 
 ---
 
