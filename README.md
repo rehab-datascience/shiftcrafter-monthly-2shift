@@ -5,7 +5,7 @@
 
 - 連載：Part 3（三交代）→Part 4（早出・遅出）→Part 5（時短勤務）→Part 6（看護助手など混合）…と拡張予定
 - デモ（GitHub Pages）：https://rehab-datascience.github.io/shiftcrafter-monthly-2shift/index.html
-- リポジトリ：https://github.com/rehab-datascience/shiftcrafter-weekly-2shift
+- リポジトリ：https://github.com/rehab-datascience/shiftcrafter-monthly-2shift
 
 ---
 
