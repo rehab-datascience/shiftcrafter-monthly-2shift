@@ -532,12 +532,15 @@ elBtnValidate.addEventListener('click', ()=>{
   download('validation_summary.csv', blob);
 });
 
-// 生成時に有効化
-// （既存の生成成功後に↓を足す）
-/* elBtnCsv.disabled = false;
-   elBtnIcsAll.disabled = false; */
-   // の直後に
-// elBtnValidate.disabled = false;
+// 生成成功後
+renderTable(schedule);
+renderSummary(schedule, staff);
+
+// ← コメントを外して“実行されるコード”にする
+elBtnCsv.disabled = false;
+elBtnIcsAll.disabled = false;
+elBtnValidate.disabled = false;
+
 </script>
 </body>
 </html>
